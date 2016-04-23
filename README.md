@@ -7,7 +7,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
 	module: {
 		loaders: [
-			{ test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") }
+			{ test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
+			{ test: /\.sass$/, loader: ExtractTextPlugin.extract("style-loader", ["css-loader", "sass-loader"]) },
 		]
 	},
 	plugins: [
